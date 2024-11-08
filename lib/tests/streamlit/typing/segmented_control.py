@@ -31,7 +31,7 @@ if TYPE_CHECKING:
     )
     assert_type(
         segmented_control("foo", options, default=1),
-        Union[int, None],
+        int,
     )
     assert_type(
         segmented_control("foo", options, selection_mode="single"),
