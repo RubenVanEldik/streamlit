@@ -26,12 +26,20 @@ if TYPE_CHECKING:
 
     options: list[int] = [1, 2, 3]
     assert_type(
+        segmented_control("foo", options),
+        Union[int, None],
+    )
+    assert_type(
+        segmented_control("foo", options, default=1),
+        Union[int, None],
+    )
+    assert_type(
         segmented_control("foo", options, selection_mode="single"),
         Union[int, None],
     )
     assert_type(
         segmented_control("foo", options, selection_mode="single", default=1),
-        Union[int, None],
+        int,
     )
     assert_type(
         segmented_control("foo", options, selection_mode="multi"),
