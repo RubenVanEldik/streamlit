@@ -393,7 +393,7 @@ class ButtonGroupMixin:
         options: OptionSequence[V],
         *,
         selection_mode: Literal["single"] = "single",
-        default: None = None,
+        default: V | None = None,
         format_func: Callable[[Any], str] | None = None,
         key: Key | None = None,
         help: str | None = None,
@@ -403,23 +403,6 @@ class ButtonGroupMixin:
         disabled: bool = False,
         label_visibility: LabelVisibility = "visible",
     ) -> V | None: ...
-    @overload
-    def pills(
-        self,
-        label: str,
-        options: OptionSequence[V],
-        *,
-        selection_mode: Literal["single"] = "single",
-        default: V,
-        format_func: Callable[[Any], str] | None = None,
-        key: Key | None = None,
-        help: str | None = None,
-        on_change: WidgetCallback | None = None,
-        args: WidgetArgs | None = None,
-        kwargs: WidgetKwargs | None = None,
-        disabled: bool = False,
-        label_visibility: LabelVisibility = "visible",
-    ) -> V: ...
     @overload
     def pills(
         self,
@@ -612,7 +595,7 @@ class ButtonGroupMixin:
         options: OptionSequence[V],
         *,
         selection_mode: Literal["single"] = "single",
-        default: None = None,
+        default: V | None = None,
         format_func: Callable[[Any], str] | None = None,
         key: str | int | None = None,
         help: str | None = None,
@@ -622,23 +605,6 @@ class ButtonGroupMixin:
         disabled: bool = False,
         label_visibility: LabelVisibility = "visible",
     ) -> V | None: ...
-    @overload
-    def segmented_control(
-        self,
-        label: str,
-        options: OptionSequence[V],
-        *,
-        selection_mode: Literal["single"] = "single",
-        default: V,
-        format_func: Callable[[Any], str] | None = None,
-        key: str | int | None = None,
-        help: str | None = None,
-        on_change: WidgetCallback | None = None,
-        args: WidgetArgs | None = None,
-        kwargs: WidgetKwargs | None = None,
-        disabled: bool = False,
-        label_visibility: LabelVisibility = "visible",
-    ) -> V: ...
     @overload
     def segmented_control(
         self,
