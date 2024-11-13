@@ -16,19 +16,16 @@
 
 import styled from "@emotion/styled"
 
-interface StyledJsonWrapperProps {
-  width: number
+interface StyledIframeProps {
+  disableScrolling: boolean
 }
 
-export const StyledJsonWrapper = styled.div<StyledJsonWrapperProps>(
-  ({ theme, width }) => ({
-    width: width,
-    overflowY: "auto",
-    ".react-json-view .copy-icon svg": {
-      // Make the copy icon responsive to the root font size.
-      fontSize: `1em !important`,
-      marginRight: `${theme.spacing.threeXS} !important`,
-      verticalAlign: "middle !important",
-    },
+export const StyledIframe = styled.iframe<StyledIframeProps>(
+  ({ theme, disableScrolling }) => ({
+    colorScheme: "normal",
+    border: "none",
+    padding: theme.spacing.none,
+    margin: theme.spacing.none,
+    overflow: disableScrolling ? "hidden" : undefined,
   })
 )
